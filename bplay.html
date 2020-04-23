@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BPlay</title>
+    <link rel="stylesheet" href="bplay.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+</head>
+<body>
+    <div class="video">
+        <video src="videos/test.mp4" id="video" class="screen" poster="img/poster.png"></video>
+        <div class="playlist">
+            <h1>Playlist</h1>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <div class="buttons">
+            <button class="btn" id="cam" alt="Broadcast" title="Broadcast Video"><i class="fas fa-video"></i></button>
+            <button class="btn" id="play" alt="Play" title="Start Video Playback"><i class="fa fa-play"></i></button>
+            <button class="btn" id="stop" alt="Stop" title="Stop Video Playback"><i class="fa fa-stop"></i></button>
+            <input type="range" id="progress" class="progress" min="0" max="100" step="0.1" value="0" />
+            <span class="timestamp" id="timestamp">00:00</span>
+        </div>
+
+        <div class="info">
+            <p>Planet Earth as Seen From Orbit</p>
+        </div>
+
+        <div class="branding">
+            <a href="https://www.brizzle.dev" alt="brizzle.dev" title="bplay - a brizzle.dev production"><img src=""
+                    alt="brizzle.dev" title="brizzle.dev"></a>
+        </div>
+    </div>
+
+    <script src="bplay.js"></script>
+</body>
+</html>

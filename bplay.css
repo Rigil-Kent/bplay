@@ -1,0 +1,272 @@
+@import url('https://fonts.googleapis.com/css?family=Questrial&display=swap');
+
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Questrial', sans-serif;
+    background-color: #666;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #ccc;
+}
+
+h1 {
+    color: #fff;
+}
+
+.video {
+    display: flex;
+    height: 95vh;
+    max-width: 100%;
+    padding: 0;
+}
+
+.playlist {
+    width: 25vw;
+}
+
+.screen {
+    cursor: pointer;
+    width: 75vw;
+    height: 95vh;
+    background-color: black !important;
+}
+
+.controls {
+    width: 100vw;
+    max-width: 100%;
+    height: 50px;
+    background: #333;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.controls .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls .btn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+
+.controls .fa-play {
+    color: #28a745;
+}
+
+.controls .fa-stop {
+    color: #dc3545;
+}
+
+.controls .fa-pause {
+    color: #fff;
+}
+
+.controls .timestamp {
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.controls .broadcast:disabled{
+    animation: broadcastActive 2s infinite;
+}
+
+.btn:focus {
+    outline: 0;
+}
+
+.progress {
+    min-width: 700px;
+}
+
+
+input[type=range] {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    background: transparent;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-shadow: 1px 1px 1px #333;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    height: 14px;
+    width: 5px;
+    background: #fff;
+    cursor: pointer;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #333;
+    border: 1px solid #ccc;
+    border-radius: 0;
+    height: 14px;
+    width: 5px;
+    background: #fff;
+    cursor: pointer;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    cursor: pointer;
+
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000, 0px 0px 0px #0d0d0d;
+    background: rgba(88, 88, 88, 0.1);
+    border: 0.1px solid #444;
+}
+
+@media (max-width: 800px) {
+    .controls .info, .playlist {
+        display: none;
+    }
+
+    .controls, .video {
+        width: 99%;
+    }
+
+    .screen {
+        width: 100%;
+    }
+    
+    .controls .buttons {
+        flex: 1 0 75%;
+    }
+
+    .controls .branding {
+        flex: 1 1 25%;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #367ebd;
+    }
+
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8.4px;
+    }
+
+    .progress {
+        min-width: 100px;
+    }
+
+    .branding {
+        margin-left: 10px;
+    }
+}
+
+
+@media (max-width: 512px) {
+    .controls .info, .playlist {
+        display: none;
+    }
+
+    .controls, .video {
+        width: 99%;
+    }
+
+    .screen {
+        width: 100%;
+    }
+
+    .controls .buttons {
+        flex: 1 0 75%;
+    }
+
+    .controls .branding {
+        flex: 1 1 25%;
+    }
+
+    input[type=range]::-webkit-slider-runnable-track {
+        width: 100%;
+        height: 8.4px;
+    }
+
+    input[type=range]:focus::-webkit-slider-runnable-track {
+        background: #367ebd;
+    }
+
+    input[type=range]::-moz-range-track {
+        width: 100%;
+        height: 8.4px;
+    }
+
+    .progress {
+        min-width: 100px;
+    }
+
+    .branding {
+        margin-left: 10px;
+    }
+}
+
+
+@keyframes broadcastActive {
+    0%, 49% {
+        color: #666;
+    }
+    50%, 100% {
+        color: green;
+    }
+}
