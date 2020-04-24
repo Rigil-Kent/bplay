@@ -258,6 +258,7 @@ input[type=range]::-moz-range-track {
 
     .branding {
         margin-left: 10px;
+        display: flex;
     }
 }
 

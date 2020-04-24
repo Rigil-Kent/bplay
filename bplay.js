@@ -2,10 +2,10 @@ const video = document.getElementById('video');
 const play = document.getElementById('play');
 const stop = document.getElementById('stop');
 const camera = document.getElementById('cam');
+const expand = document.getElementById('expand');
 const progress = document.getElementById('progress');
 const timestamp = document.getElementById('timestamp');
 const media = navigator.mediaDevices;
-
 
 
 // Play & Pause video
@@ -22,8 +22,10 @@ function toggleVideoStatus() {
 function updatePlayIcon() {
     if (video.paused) {
         play.innerHTML = '<i class="fa fa-play"></i>';
+        play.title = 'Start Video Playback';
     } else {
         play.innerHTML = '<i class="fa fa-pause"></i>';
+        play.title = 'Pause Video Playback';
     }
 }
 
@@ -62,15 +64,39 @@ function stopVideo() {
 }
 
 
+function openFullscreen() {
+    if (video.requestFullscreen) {
+        video.requestFullscreen();
+    } else if (video.mozRequestFullscreen) {
+        video.mozRequestFullscreen();
+    } else if (video.webkitRequestFullscreen) {
+        video.webkitRequestFullscreen();
+    } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+    }
+}
+
+
+function closeFullscreen() {
+    if (document.exitFullscreen) {
+        document.exitFullscreen();
+    } else if (document.mozCancelFullscreen) {
+        document.mozCancelFullscreen();
+    } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+    }
+}
+
 function startCam() {
     if (media) {
-        media.getUserMedia({ video: true, audio: false }).then(
+        media.getUserMedia({ video: true, audio: true }).then(
             function onSuccess(stream) {
                 let cam = document.getElementById('video');
                 camera.innerHTML = '<i class="fas fa-broadcast-tower"></i>';
                 camera.classList.add('broadcast');
                 camera.disabled = true;
-                console.log(camera);
                 stop.alt, stop.title = 'Stop Broadcasting';
                 camera.alt, camera.title = 'Broadcasting...';
                 cam.autoplay = true;
@@ -124,3 +150,4 @@ stop.addEventListener('click', stopCam);
 
 progress.addEventListener('change', setVideoProgress);
 camera.addEventListener('click', startCam);
+expand.addEventListener('click', openFullscreen);
