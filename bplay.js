@@ -4,6 +4,7 @@ const stop = document.getElementById('stop');
 const camera = document.getElementById('cam');
 const expand = document.getElementById('expand');
 const mute = document.getElementById('mute');
+const player = document.getElementById('player');
 const progress = document.getElementById('progress');
 const volume = document.getElementById('volume');
 const timestamp = document.getElementById('timestamp');
@@ -191,6 +192,7 @@ function stopCam() {
         item.stop();
     });
 
+    buttons.classList.remove('p-boost');
     video.srcObject = null;
     video.autoplay = false;
     play.innerHTML = '<i class="fa fa-play"></i>';

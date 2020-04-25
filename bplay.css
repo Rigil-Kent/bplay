@@ -187,14 +187,6 @@ input[type=range]::-moz-range-track {
     margin-left: 5px;
 }
 
-.volumeBar input[type=range]::-moz-range-thumb {
-    
-}
-
-.volumeBar input[type=range]::-moz-range-track {
-    
-}
-
 @media (max-width: 800px) {
     .controls .info, .playlist {
         display: none;
