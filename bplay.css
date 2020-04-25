@@ -73,6 +73,7 @@ h1 {
     border: 0;
     background: transparent;
     cursor: pointer;
+    width: 25px;
 }
 
 .controls .fa-play {
@@ -172,6 +173,28 @@ input[type=range]::-moz-range-track {
     border: 0.1px solid #444;
 }
 
+.volumeBar {
+    margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.volumeBar .btn {
+    width: 25px;
+}
+.volumeBar input[type=range] {
+    margin-left: 5px;
+}
+
+.volumeBar input[type=range]::-moz-range-thumb {
+    
+}
+
+.volumeBar input[type=range]::-moz-range-track {
+    
+}
+
 @media (max-width: 800px) {
     .controls .info, .playlist {
         display: none;
@@ -209,6 +232,10 @@ input[type=range]::-moz-range-track {
 
     .progress {
         min-width: 100px;
+    }
+
+    .volumeBar {
+        display: none;
     }
 
     .branding {
@@ -254,6 +281,10 @@ input[type=range]::-moz-range-track {
 
     .progress {
         min-width: 100px;
+    }
+
+    .volumeBar {
+        display: none;
     }
 
     .branding {
